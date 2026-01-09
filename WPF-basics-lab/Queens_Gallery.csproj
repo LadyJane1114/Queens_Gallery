@@ -1,0 +1,109 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <RootNamespace>WPF_basics_lab</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="resources\ada-love.jpg" />
+    <None Remove="resources\Anthony_Frederick_Sandys_-_Queen_Eleanor.JPG" />
+    <None Remove="resources\bouddica.jpg" />
+    <None Remove="resources\Frida-Kahlo-Self-Portrait-.jpg" />
+    <None Remove="resources\frida.jpg" />
+    <None Remove="resources\grainne.jpg" />
+    <None Remove="resources\Grainne_Mhaol_Ni_Mhaille_Statue.jpg" />
+    <None Remove="resources\hattie-mcdaniel.jpg" />
+    <None Remove="resources\hedy.jpg" />
+    <None Remove="resources\hypatia.jpg" />
+    <None Remove="resources\Jane-Austen-Cassandra-engraving-portrait-1810.jpg" />
+    <None Remove="resources\jane-austen.jpg" />
+    <None Remove="resources\m-shelley.jpg" />
+    <None Remove="resources\m-wollestoncraft.jpg" />
+    <None Remove="resources\marie_curie.jpg" />
+    <None Remove="resources\marsha.jpg" />
+    <None Remove="resources\Mary_Wollstonecraft_by_John_Opie_%28c._1797%29.jpg" />
+    <None Remove="resources\Mary_Wollstonecraft_Shelley_Rothwell.tif.jpg" />
+    <None Remove="resources\murasaki-shikibu.jpg" />
+    <None Remove="resources\NyVsZhibmAHs5VATqSsUVT.jpg" />
+    <None Remove="resources\queen-eleanor.JPG" />
+    <None Remove="resources\rosa-parks.jpg" />
+    <None Remove="resources\ruth-handler.jpg" />
+    <None Remove="resources\Ruth_Handler_1961_%28cropped%29.jpg" />
+    <None Remove="resources\st-joan-of-arc.jpg" />
+    <None Remove="resources\Studio_publicity_Hattie_McDaniel.jpg" />
+    <None Remove="resources\tosa-mitsuoki-portrait-of-murasaki-shikibu.jpg" />
+    <None Remove="resources\Zora-Neale-Hurston.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="resources\ada-love.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\anne-and-mary.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\bouddica.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\frida.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\grainne.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\hattie-mcdaniel.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\hedy.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\hypatia.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\jane-austen.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\jane-goodall.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\Keller_Helen.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\m-shelley.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\m-wollestoncraft.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\marie_curie.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\marsha.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\murasaki-shikibu.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\queen-eleanor.JPG">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\rosa-parks.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\ruth-handler.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\st-joan-of-arc.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\Zora-Neale-Hurston.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
