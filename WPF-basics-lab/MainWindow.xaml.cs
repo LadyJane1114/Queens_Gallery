@@ -20,7 +20,7 @@ namespace Queens_Gallery
         private const int VisibleCount = 5;
         private int _currentCenterIndex = 0;
 
-        public ObservableCollection<Models.CarouselItem> VisiblePortraits { get; set; } = new ObservableCollection<Models.CarouselItem>();
+        public ObservableCollection<Models.CarouselItem> VisiblePortraits { get; } = new ObservableCollection<Models.CarouselItem>();
 
         public MainWindow()
         {
@@ -101,7 +101,7 @@ namespace Queens_Gallery
                 new CarouselItem
                 {
                     Title = "Murasaki Shikibu",
-                    ImagePath = "resources/murasaki-shikubu.jpg"
+                    ImagePath = "resources/murasaki-shikibu.jpg"
                 },
                 new CarouselItem
                 {
@@ -154,6 +154,28 @@ namespace Queens_Gallery
                 int index = (_currentCenterIndex + offset+ total) % total;
                 VisiblePortraits.Add(Portraits[index]);
             }
+        }
+
+        private void Previous_Click(object sender, RoutedEventArgs e)
+        {
+            _currentCenterIndex--;
+
+            if (_currentCenterIndex < 0)
+            {
+                _currentCenterIndex = Portraits.Count - 1;
+            }
+            UpdateVisiblePortraits();
+        }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            _currentCenterIndex++;
+
+            if (_currentCenterIndex >= Portraits.Count )
+            {
+                _currentCenterIndex = 0;
+            }
+            UpdateVisiblePortraits();
         }
     }
 }

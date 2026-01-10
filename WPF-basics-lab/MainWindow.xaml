@@ -5,48 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Queens_Gallery"
         mc:Ignorable="d"
-        Title="The Queen's Gallery" Height="450" Width="800">
-    <Grid>
+        Title="The Queen's Gallery" Height="600" Width="1200">
+    <!--main body-->
+    <Grid Background="BurlyWood">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        
-        <TextBlock Text="Welcome to The Queen's Gallery" FontSize="24" FontWeight="Bold" 
-                   HorizontalAlignment="Center" Margin="10"/>
 
-        <ScrollViewer HorizontalScrollBarVisibility="Hidden" 
-                      VerticalScrollBarVisibility="Disabled"
-                      Grid.Row="1">
+        <StackPanel Grid.Row="0" Orientation="Vertical">
+            <TextBlock Text="Welcome to The Queen's Gallery" FontSize="24" FontWeight="Bold" 
+           HorizontalAlignment="Center" Margin="10"/>
+            <TextBlock Text="A short look at some influencial women throughout history" FontSize="18" HorizontalAlignment="Center" Margin="10"/>
+        </StackPanel>
+
+        <!--Carousel Grid-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Arrow Button -->
+            <Button Content="◀"
+                    Grid.Column="0"
+                    FontSize="24"
+                    Padding="10"
+                    VerticalAlignment="Center"
+                    Click="Previous_Click"/>
+
+            <!-- Carousel -->
             <ListBox x:Name="Carousel"
+                     Grid.Column="1"
                      ItemsSource="{Binding VisiblePortraits}"
                      SelectionChanged="Carousel_SelectionChanged"                     
                      Background="Transparent"
                      BorderThickness="0"
+                     HorizontalAlignment="Center"
                      ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                     ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                     ScrollViewer.CanContentScroll="False">
+                     ScrollViewer.VerticalScrollBarVisibility="Disabled">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal"/>
                     </ItemsPanelTemplate>
                 </ListBox.ItemsPanel>
+
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Button Padding="0"
-                                BorderThickness="0"
-                                Background="Transparent">
+                        BorderThickness="0"
+                        Background="Transparent">
                             <Image Source="{Binding ImagePath}"
-                                   Width="200"
-                                   Height="200"
-                                   Margin="5"/>
+                           Width="200"
+                           Height="200"
+                           Margin="5"/>
                         </Button>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-        </ScrollViewer>
 
-
-    </Grid>
+            <!-- Right Arrow Button -->
+            <Button Content="▶"
+                    Grid.Column="2"
+                    FontSize="24"
+                    Padding="10"
+                    VerticalAlignment="Center"
+                    Click="Next_Click"/>
+        </Grid>
+        <!--End of Carousel-->
+    </Grid> 
+    <!--End of main-->
 </Window>
