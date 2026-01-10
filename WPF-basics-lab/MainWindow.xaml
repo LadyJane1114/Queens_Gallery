@@ -39,6 +39,7 @@
             <ListBox x:Name="Carousel"
                      Grid.Column="1"
                      ItemsSource="{Binding VisiblePortraits}"
+                     AlternationCount="5"
                      SelectionChanged="Carousel_SelectionChanged"                     
                      Background="Transparent"
                      BorderThickness="0"
@@ -57,7 +58,57 @@
                         </Setter>
 
                         <Style.Triggers>
+                            <!-- Far Left -->
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                <Setter Property="Opacity" Value="0.4"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.6" ScaleY="0.6"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
                             
+                            <!-- Middle Left -->
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                <Setter Property="Opacity" Value="0.7"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <!-- Center -->
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="2">
+                                <Setter Property="Opacity" Value="1"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <!-- Middle Right -->
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="3">
+                                <Setter Property="Opacity" Value="0.7"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <!-- Far Right -->
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="4">
+                                <Setter Property="Opacity" Value="0.4"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.6" ScaleY="0.6"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+
                         </Style.Triggers>
                     </Style>
                 </ListBox.ItemContainerStyle>

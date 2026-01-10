@@ -31,8 +31,6 @@
     <None Remove="resources\murasaki-shikibu.jpg" />
     <None Remove="resources\NyVsZhibmAHs5VATqSsUVT.jpg" />
     <None Remove="resources\queen-eleanor.JPG" />
-    <None Remove="resources\rosa-parks.jpg" />
-    <None Remove="resources\ruth-handler.jpg" />
     <None Remove="resources\Ruth_Handler_1961_%28cropped%29.jpg" />
     <None Remove="resources\st-joan-of-arc.jpg" />
     <None Remove="resources\Studio_publicity_Hattie_McDaniel.jpg" />
@@ -90,12 +88,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="resources\queen-eleanor.JPG">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="resources\rosa-parks.jpg">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="resources\ruth-handler.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="resources\st-joan-of-arc.jpg">
