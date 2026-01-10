@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Queens_Gallery"
         mc:Ignorable="d"
-        Title="The Queen's Gallery" Height="600" Width="1200">
+        Title="The Queen's Gallery" Height="650" Width="1100">
     <!--main body-->
     <Grid Background="BurlyWood">
         <Grid.RowDefinitions>
@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Vertical">
-            <TextBlock Text="Welcome to The Queen's Gallery" FontSize="24" FontWeight="Bold" 
+            <TextBlock Text="Welcome to The Queen's Gallery" FontFamily="Bookman Old Style" FontSize="24" FontWeight="Bold" 
            HorizontalAlignment="Center" Margin="10"/>
             <TextBlock Text="A short look at some influencial women throughout history" FontSize="18" HorizontalAlignment="Center" Margin="10"/>
         </StackPanel>
@@ -39,21 +39,29 @@
             <ListBox x:Name="Carousel"
                      Grid.Column="1"
                      ItemsSource="{Binding VisiblePortraits}"
-                     AlternationCount="5"
-                     SelectionChanged="Carousel_SelectionChanged"                     
+                     AlternationCount="7"                     
                      Background="Transparent"
                      BorderThickness="0"
                      HorizontalAlignment="Center"
                      ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                      ScrollViewer.VerticalScrollBarVisibility="Disabled">
                 <!--Styling my Carousel-->
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="ListBoxItem">
                         <Setter Property="Opacity" Value="1"/>
                         <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
                         <Setter Property="RenderTransform">
                             <Setter.Value>
-                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
                             </Setter.Value>
                         </Setter>
 
@@ -67,7 +75,7 @@
                                     </Setter.Value>
                                 </Setter>
                             </Trigger>
-                            
+
                             <!-- Middle Left -->
                             <Trigger Property="ItemsControl.AlternationIndex" Value="1">
                                 <Setter Property="Opacity" Value="0.7"/>
@@ -108,27 +116,33 @@
                                 </Setter>
                             </Trigger>
 
-
                         </Style.Triggers>
                     </Style>
                 </ListBox.ItemContainerStyle>
-                
-                
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal"/>
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
+
 
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Button Padding="0"
-                        BorderThickness="0"
-                        Background="Transparent">
-                            <Image Source="{Binding ImagePath}"
-                           Width="200"
-                           Height="200"
-                           Margin="5"/>
+                                BorderThickness="0"
+                                Background="Transparent"
+                                Click="PortraitButton_Click">
+                            <Border Width="190" Height="240" Background="AntiqueWhite" CornerRadius="6">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Source="{Binding ImagePath}"
+                                           Width="190"
+                                           Height="190"
+                                           Margin="5"
+                                           Stretch="UniformToFill"
+                                           ClipToBounds="True"/>
+                                    <TextBlock Text="{Binding Title}"
+                                               FontFamily="Bookman Old Style"
+                                               FontSize="14"
+                                               TextWrapping="Wrap"
+                                               TextAlignment="Center"
+                                               HorizontalAlignment="Stretch"/>
+                                </StackPanel>
+                            </Border>
                         </Button>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

@@ -50,8 +50,8 @@ namespace Queens_Gallery
                 },
                 new CarouselItem
                 {
-                    Title = "Anne Bonny and Mary Read",
-                    ImagePath = "resources/anne-and-mary.jpg",
+                    Title = "Anne Bonny & Mary Read",
+                    ImagePath = "resources/anne-mary.jpg",
                     Subtitle ="The Queens of the Caribbean",
                     ActiveEra ="Early 18th Century CE",
                     PrimaryLocation="Caribbean Sea",
@@ -223,12 +223,12 @@ namespace Queens_Gallery
             UpdateVisiblePortraits();
         }
 
-        private void Carousel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void PortraitButton_Click(object sender, RoutedEventArgs e)
         {
-            if(Carousel.SelectedItem is CarouselItem item)
+            if (sender is Button btn && btn.DataContext is CarouselItem item)
             {
-                // Navigate to page details
-                MessageBox.Show($"{item.InfoBlurb}");
+                // Navigate to details page
+                MessageBox.Show($"You clicked: {item.Title}");
             }
         }
 

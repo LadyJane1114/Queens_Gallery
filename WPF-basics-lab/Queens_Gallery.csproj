@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <None Remove="resources\ada-love.jpg" />
+    <None Remove="resources\anne-mary.jpg" />
     <None Remove="resources\Anthony_Frederick_Sandys_-_Queen_Eleanor.JPG" />
     <None Remove="resources\bouddica.jpg" />
     <None Remove="resources\Frida-Kahlo-Self-Portrait-.jpg" />
@@ -35,6 +36,7 @@
     <None Remove="resources\st-joan-of-arc.jpg" />
     <None Remove="resources\Studio_publicity_Hattie_McDaniel.jpg" />
     <None Remove="resources\tosa-mitsuoki-portrait-of-murasaki-shikibu.jpg" />
+    <None Remove="resources\viola-desmond.jpg" />
     <None Remove="resources\Zora-Neale-Hurston.jpg" />
   </ItemGroup>
 
@@ -42,7 +44,7 @@
     <Resource Include="resources\ada-love.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="resources\anne-and-mary.jpg">
+    <Resource Include="resources\anne-mary.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="resources\bouddica.jpg">
@@ -91,6 +93,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="resources\st-joan-of-arc.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\viola-desmond.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="resources\Zora-Neale-Hurston.jpg">
