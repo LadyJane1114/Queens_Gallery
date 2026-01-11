@@ -4,6 +4,155 @@
              xmlns:local="clr-namespace:WPF_basics_lab"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!-- Warm parchment and maroon palette -->
+        <SolidColorBrush x:Key="MaroonBrush" Color="Maroon"/>
+        <SolidColorBrush x:Key="AccentBrush" Color="IndianRed"/>
+        <SolidColorBrush x:Key="ParchmentDark" Color="Bisque"/>
+        <SolidColorBrush x:Key="DarkRedBrown" Color="#5C3229"/>
+        <SolidColorBrush x:Key="LightRed" Color="#A45A4F"/>
+
+        <!-- Header text styles -->
+        <Style x:Key="HeaderTextStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Bookman Old Style"/>
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="{StaticResource MaroonBrush}"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#77CC8F20" BlurRadius="10" ShadowDepth="1"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SubHeaderTextStyle" TargetType="TextBlock" BasedOn="{StaticResource HeaderTextStyle}">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkRedBrown}"/>
+        </Style>
+
+        <!-- Arrow button style -->
+        <Style x:Key="ArrowButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource MaroonBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="12"
+                        Background="{TemplateBinding Background}"
+                        Padding="6"
+                        Width="48"
+                        Height="56"
+                        BorderBrush="{StaticResource DarkRedBrown}"
+                        BorderThickness="1"
+                        SnapsToDevicePixels="True">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource AccentBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.98" ScaleY="0.98"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#66000000" BlurRadius="8" ShadowDepth="2"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!--Details button style-->
+        <Style x:Key="DetailsButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource MaroonBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Bookman Old Style"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="12"
+                Background="{TemplateBinding Background}"
+                Padding="10"
+                Width="170"
+                Height="56"
+                BorderBrush="{StaticResource DarkRedBrown}"
+                BorderThickness="1"
+                SnapsToDevicePixels="True">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource AccentBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.98" ScaleY="0.98"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#66000000" BlurRadius="8" ShadowDepth="2"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Carousel item border style -->
+        <Style x:Key="CarouselItemBorderStyle" TargetType="Border">
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#FFFDF6EC" Offset="0"/>
+                        <GradientStop Color="#FFF3E4CE" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderBrush" Value="{StaticResource LightRed}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="6"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#33000000" BlurRadius="10" ShadowDepth="3"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TitleTextStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Bookman Old Style"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkRedBrown}"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+
+        <!-- ListBox style adjustments -->
+        <Style TargetType="ListBox" x:Key="CarouselListBoxStyle">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
     </Application.Resources>
 </Application>
