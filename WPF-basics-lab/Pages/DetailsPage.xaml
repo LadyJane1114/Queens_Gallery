@@ -41,7 +41,7 @@
                         Margin="10"
                         Click="More_Info"/>
                 <Button x:Name="BackToHome" 
-                        Content="Back to Home" 
+                        Content="Back to Gallery" 
                         Style="{StaticResource DetailsButtonStyle}" 
                         Margin="10"
                         Click="Back_Home"/>

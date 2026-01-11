@@ -89,7 +89,7 @@
                         <Border CornerRadius="12"
                 Background="{TemplateBinding Background}"
                 Padding="10"
-                Width="170"
+                Width="175"
                 Height="56"
                 BorderBrush="{StaticResource DarkRedBrown}"
                 BorderThickness="1"
