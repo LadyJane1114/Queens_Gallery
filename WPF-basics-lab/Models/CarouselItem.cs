@@ -6,6 +6,7 @@ namespace Queens_Gallery.Models
 {
     public class CarouselItem
     {
+        public int PortraitID { get; set; }
         public string Title { get; set; } = string.Empty;
         public string ImagePath { get; set; } = string.Empty;
         public string Subtitle { get; set; } = string.Empty;
